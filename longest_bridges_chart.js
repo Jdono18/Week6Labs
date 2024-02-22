@@ -29,15 +29,16 @@ let chart = new Chart(context, {
     }
 })
 
-let name = data1[0].name
-let length = data1[0].span
-function addDataToChart (name, length) {
-    chart.data.labels.push(name)
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(length)
-    })
-
+data1.forEach( function (name) {
+    chart.data.labels.push(name.name)
     chart.update()
-}
+})
+data1.forEach(function (span){
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(span.span)
+    })
+})
 
-addDataToChart(name, length)
+chart.update()
+
+
