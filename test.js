@@ -7,12 +7,30 @@ let data1 = [
 ]
 
 //console.log(data1)
-
-data1.forEach( function(Bridgename){
-    //let name = data1.name
-    console.log(Bridgename.name)
+let largest = 0
+newArr = []
+data1.forEach(function(longestbridge) {
+    if (largest < longestbridge.span)
+    largest = longestbridge.span
 })
+    console.log(largest)
 
-data1.forEach( function(Bridgespan){
-    console.log(Bridgespan.span)
-})
+let index = data1.findIndex(i => i.span === largest)
+console.log(index)
+newArr.push(data1[index])
+data1.shift()
+console.log(newArr)
+console.log('These are the last 4')
+console.log(data1)
+
+
+
+
+
+
+
+
+
+
+
+
